@@ -12,13 +12,7 @@ This tutorial is for beginners who wants to learn MATLAB. Let's begin with comma
 - You can recall previous commands by pressing the Up arrow key on your keyboard. Note that the Command Window must be the active window for this to work.
 - When you enter just a variable name at the command prompt, MATLAB returns the current value of that variable.
 
-
-Workspace hints:
-
-- Notice that the Workspace window (on the right) shows all the variables currently in the workspace.
-
 ##### Storing Data in Variables
-
 - You can name your MATLAB variables anything you'd like as long as they start with a letter and contain only letters, numbers, and underscores **_**.
 
         3sq = 9
@@ -27,3 +21,16 @@ Workspace hints:
         syntax error. To construct matrices, use brackets instead of parentheses.
 
         Did you mean: sq = 9 ?
+
+- Try clearing all variables by entering the command **clear**
+- **clear** command removes workspace variables, and **clc** clears the Command Window.
+
+##### Using Built-in Functions and Constants
+- Info: MATLAB contains built-in constants, such as pi to represent π.
+    >> a = pi
+    a =
+    3.1416
+
+Also, although only four decimal places are shown for π, it is represented internally with greater precision.
+      x = pi/2
+      1.5708
