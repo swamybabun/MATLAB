@@ -21,9 +21,9 @@ Workspace hints:
 
 - You can name your MATLAB variables anything you'd like as long as they start with a letter and contain only letters, numbers, and underscores **_**.
 
-    3sq = 9
-      ↑
-    Error: Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or other syntax error. To construct matrices, use brackets instead of
-    parentheses.
+        3sq = 9
+          ↑
+        Error: Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or other      
+        syntax error. To construct matrices, use brackets instead of parentheses.
 
-    Did you mean: sq = 9 ?
+        Did you mean: sq = 9 ?
