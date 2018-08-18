@@ -15,22 +15,24 @@ This tutorial is for beginners who wants to learn MATLAB. Let's begin with comma
 ##### Storing Data in Variables
 - You can name your MATLAB variables anything you'd like as long as they start with a letter and contain only letters, numbers, and underscores **_**.
 
-        3sq = 9
-          ↑
-        Error: Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or other      
-        syntax error. To construct matrices, use brackets instead of parentheses.
+      3sq = 9
+        ↑
+      Error: Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or other      
+      syntax error. To construct matrices, use brackets instead of parentheses.
 
-        Did you mean: sq = 9 ?
+      Did you mean: sq = 9 ?
 
 - Try clearing all variables by entering the command **clear**
 - **clear** command removes workspace variables, and **clc** clears the Command Window.
 
 ##### Using Built-in Functions and Constants
-- Info: MATLAB contains built-in constants, such as pi to represent π.
-    >> a = pi
-    a =
-    3.1416
+- MATLAB contains built-in constants, such as **pi** to represent π.
+    
+      a = pi
+      a =
+      3.1416
 
 Also, although only four decimal places are shown for π, it is represented internally with greater precision.
+      
       x = pi/2
       1.5708
