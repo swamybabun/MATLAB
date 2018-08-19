@@ -442,3 +442,211 @@ Try creating a scalar variable p that contains the value in the second to last (
           9.0698
 
 #### 5.2 Extracting Multiple Elements
+
+- When used as an index, the colon operator (:) specifies all the elements in that dimension. The syntax
+
+      >> x = A(2,:)
+
+creates a row vector containing all of the elements from the second row of A.
+Try creating a variable named density that contains the second column of the matrix named data.
+
+      >> density = data(:,2)
+      density =
+          0.5300
+          1.7800
+          0.8600
+          1.6000
+          3.0000
+          6.1100
+          2.5400
+
+- The colon operator can refer to a range of values. The following syntax creates a matrix containing the first, second, and third rows of the matrix A.
+
+      >> x = A(1:3,:)
+
+Try creating a variable **volumes** containing the last two columns of data.
+
+      >> volumes = data(:,3:4)
+      volumes =
+          4.0753       NaN
+          6.6678    2.1328
+          1.5177    3.6852
+          3.6375    8.5389
+          4.7243   10.1570
+          9.0698    2.8739
+          5.3002    4.4508
+
+- A single index value can be used to reference vector elements. For example
+
+      >> x = v(3)
+
+returns the third element of vector v when v is either a row or column vector.
+Using a single index value, create a variable named p containing the 6th element in the vector density.
+
+      >> p = density(6)
+      p =
+          6.1100
+
+- A single range of index values can be used to reference a subset of vector elements. For example
+
+      >> x = v(3:end)
+
+returns a subset of vector v containing the elements from 3 to the end.
+Using a range of index values, create a vector named p containing the 2nd through 5th elements of density.
+
+      >> p = density(2:5)
+      p =
+          1.7800
+          0.8600
+          1.6000
+          3.0000
+
+#### 5.3 Changing Values in Arrays
+
+- Remember you can use the : character to extract entire columns of data.
+Create a vector named v2 containing the last column of data.
+
+      >> v2= data(:,end)
+      v2 =
+             NaN
+          2.1328
+          3.6852
+          8.5389
+         10.1570
+          2.8739
+          4.4508
+
+- Elements of a variable can be altered by combining indexing with assignment.
+
+        A(2,5) = 11
+
+Try changing the first element in v2 from NaN to 0.5.
+
+        >> v2(1) = 0.5
+        v2 =
+            0.5000
+            2.1328
+            3.6852
+            8.5389
+           10.1570
+            2.8739
+            4.4508
+
+- Now, try changing the value in the first row and last column of data to 0.5.
+
+      >> data(1,end) = 0.5
+      data =
+          3.0000    0.5300    4.0753    0.5000
+         18.0000    1.7800    6.6678    2.1328
+         19.0000    0.8600    1.5177    3.6852
+         20.0000    1.6000    3.6375    8.5389
+         21.0000    3.0000    4.7243   10.1570
+         23.0000    6.1100    9.0698    2.8739
+         38.0000    2.5400    5.3002    4.4508
+
+### 6. Array Calculations
+
+#### 6.1 Performing Array Operations on Vectors
+
+- MATLAB is designed to work naturally with arrays. For example, you can add a scalar value to all the elements of an array.
+
+        >> y = x + 2
+
+Try adding 1 to each element of v1 and store the result in a variable named r.
+
+        >> r = v1+1\
+        r =
+            5.0753
+            7.6678
+            2.5177
+            4.6375
+            5.7243
+           10.0698
+            6.3002
+
+- You can add together any two arrays of the same size.
+
+        >> z = x + y
+
+Try creating a vector vs that is the sum of the vectors v1 and v2.
+
+        >> vs = v1+ v2
+        vs =
+            4.5753
+            8.8006
+            5.2029
+           12.1764
+           14.8813
+           11.9437
+            9.7510
+
+- You can multiply or divide all of the elements of an array by a scalar.
+
+        >> z = 2*x
+        >> y = x/3
+
+Try creating a variable **va** that contains the value vs divided by 2 (the average volume).
+
+        >> va = vs/2
+        va =
+            2.2877
+            4.4003
+            2.6014
+            6.0882
+            7.4406
+            5.9718
+            4.8755
+
+- Basic statistical functions in MATLAB can be applied to a vector to produce a single output. The maximum value of a vector can be determined using the max function.
+
+        >> xMax = max(x)
+
+Try creating a variable vm containing the maximum of the va vector.
+
+        >> vm =  max(va)
+        vm =
+            7.4406
+
+- MATLAB has functions that perform mathematical operations on an entire vector or array of values in a single command.
+
+        >> xSqrt = sqrt(x)
+
+Using the round function, create a variable named vr which contains the rounded average volumes, va.
+
+        >> vr = round(va)
+        vr =
+             2
+             4
+             3
+             6
+             7
+             6
+             5
+
+- The * operator performs matrix multiplication. So, if you use * to multiply two equally sized vectors, since the inner dimensions do not agree, you will get an error message.
+
+        >> z = [3 4] * [10 20]
+        Error using  *
+        Inner matrix dimensions must agree.
+
+In contrast, the **.*** operator performs elementwise multiplication and allows you to multiply the corresponding elements of two equally sized arrays.
+
+        >> z = [3 4] .* [10 20]
+        z =
+            30    80
+
+Try to create a variable named mass containing the elementwise product of density and va.
+
+        >> mass = density .* va
+        mass =
+            1.2125
+            7.8325
+            2.2372
+            9.7411
+           22.3220
+           36.4880
+           12.3838
+
+### 7. Calling Functions
+
+#### 7.1 Obtaining Multiple Outputs from Function Calls
