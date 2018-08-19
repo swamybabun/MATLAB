@@ -1062,9 +1062,7 @@ Create a vector named t that starts at 0, ends at 20, and whose elements are spa
 Create a variable named y that contains the sum of two sine waves: sin(1.8*2πt) + sin(2.1*2πt)
 
     >> y = sin((1.8) * (2 * pi * t)) + sin( (2.1) * (2 * pi * t))
-
     y =
-
       Columns 1 through 18
 
              0    1.8734    1.2523   -0.9777   -1.8266   -0.2788    1.4798    1.1854   -0.5367   -1.3220   -0.3633    0.8044    0.7190   -0.1478   -0.4935   -0.1420    0.0860   -0.0577
