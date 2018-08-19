@@ -650,3 +650,116 @@ Try to create a variable named mass containing the elementwise product of densit
 ### 7. Calling Functions
 
 #### 7.1 Obtaining Multiple Outputs from Function Calls
+
+- The size function can be applied to an array to produce a single output variable containing the array size.
+
+        >> s = size(x)
+
+Try creating a variable named **dsize** containing the size of the data variable.
+
+        >> dsize = size(data)
+        dsize =
+             7     4
+
+- The size function can be applied to a matrix to produce either a single output variable or two output variables. Use square brackets ([ ]) to obtain more than one output.
+
+        >> [xrow,xcol] = size(x)
+
+Try creating the variables dr and dc which respectively contain the number of rows and columns of the variable data.
+
+        >> [dr,dc] = size(data)
+        dr =
+             7
+        dc =
+             4
+
+- The maximum value of a vector and its corresponding index value can be determined using the max function. The first output from the max function is the maximum value of the input vector. When called with two outputs, the second output is the index value.
+
+        >> [xMax,idx] = max(x)
+
+Try creating the variables vMax and ivMax containing the maximum value of the v2 vector and the corresponding index value respectively.
+
+        >> [vMax,ivMax] = max(v2)
+        vMax =
+           10.1570
+        ivMax =
+             5
+
+### 8. Obtaining Help
+
+#### 8.1 Obtaining Help:  (1/2) Using MATLAB's Documentation
+
+- You can get help for all the functions and commands from MATLAB documentation page.
+
+#### 8.1 Obtaining Help:  (2/2) Practice
+
+- You can enter below command to get information on any MATLAB function.
+
+        >> doc fcnName
+
+Enter the command doc randi to open the documentation page for the randi function. This will open the documentation page in a new browser tab.
+
+        >> doc randi
+
+Refer to below image how this command works.
+
+![Screenshot](screenshot2.png)
+
+- The MATLAB documentation contains a lot of good examples and information that can help you when working on your own problems.
+Use the documentation for randi to help complete the task below.
+
+Create a matrix named x that
+    - Contains random integers in the range from 1 to 20
+    - Has 5 rows
+    - Has 7 columns
+
+        >> x = randi([1,20],5,7)
+        x =
+            14     5     5     2     1     1    18
+             3     1    15    18    20    18    19
+            20     8     8    20     7    14     1
+            10     5     4    19    15    16     2
+            18    17    15     9     8    12     5
+
+### 9. Plotting Data
+
+#### 9.1 Plotting Vectors
+
+- Two vectors of the same length can be plotted against each other using the plot function.
+
+        >> plot(x,y)
+
+Try creating a plot with sample on the x-axis and mass1 on the y-axis.
+
+        >> plot(sample,mass1)  This outputs the below plot.
+
+        ![Screenshot](screenshot3.png)
+
+- The plot function accepts an additional argument that allows you to specify the color, line style, and marker style using different symbols in single quotes.
+
+        >> plot(x,y,'r--o')
+
+The command above plots a red (r) dashed (--) line with a circle (o) as a marker. You can learn more about the symbols available in the documentation for [Line Specification](https://in.mathworks.com/help/matlab/ref/linespec.html).
+Try plotting mass2 (y-axis) against sample (x-axis). Use red (r) star (*) markers and no line in your plot.
+
+        >> plot(sample, mass2,'r*') This outputs the below plot.
+        ![Screenshot](screenshot4.png)
+
+- Notice that the first plot you created no longer exists. To plot one line on top of another, use the **hold on** command to hold the previous plot while you add another line. You can also use the **hold off** command to return to the default behavior.
+Issue the **hold on** command.
+
+- Now, plot mass1 (y-axis) against sample (x-axis) with black (k) square (s) markers and no line. [Line specification options](http://www.mathworks.com/help/matlab/ref/linespec.html)
+
+        >> plot(sample,mass1,'ks') This outputs the below plot.
+        ![Screenshot](screenshot5.png)
+
+- Try closing all open figure windows by issuing the close all command.
+
+        >> close all
+
+- When you plot a single vector by itself, MATLAB uses the vector values as the y-axis data and sets the x-axis data to range from 1 to n (the number of elements in the vector).
+Plot the vector v1 using the command below.
+
+        >> plot(v1)
+        This outputs the following plot
+        ![Screenshot](screenshot6.png)
