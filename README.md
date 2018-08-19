@@ -1061,10 +1061,9 @@ Create a vector named t that starts at 0, ends at 20, and whose elements are spa
 - **y** will represent the audio signal amplitude at each sampled time.
 Create a variable named y that contains the sum of two sine waves: sin(1.8*2πt) + sin(2.1*2πt)
 
-    >> y = sin((1.8) * (2 * pi * t)) + sin( (2.1) * (2 * pi * t))
+    >>y = sin((1.8) * (2 * pi * t)) + sin( (2.1) * (2 * pi * t))
     y =
       Columns 1 through 18
-
              0    1.8734    1.2523   -0.9777   -1.8266   -0.2788    1.4798    1.1854   -0.5367   -1.3220   -0.3633    0.8044    0.7190   -0.1478   -0.4935   -0.1420    0.0860   -0.0577
 
       Columns 19 through 36
@@ -1110,3 +1109,494 @@ Create a variable named y that contains the sum of two sine waves: sin(1.8*2πt)
       Columns 199 through 201
 
        -1.2523   -1.8734   -0.0000
+
+- Since the **y** vector contains the sum of two sine waves with similar frequencies, you will see a 'beat' pattern.
+Plot the **y** vector (y-axis) against the **t** vector (x-axis).
+
+        >> plot(t,y)
+
+This generates the following plot.
+![Screenshot](screenshot14.png)
+
+- A Fourier transform returns information about the frequency content of the signal. You can use the **fft** function to compute the discrete Fourier transform of a vector.
+
+        >> fft(y)
+
+Create a variable named **yfft** that contains the discrete Fourier transform of y.
+
+    >> yfft = fft(y)
+
+    yfft =
+
+      Columns 1 through 9
+
+      -0.0000 + 0.0000i   0.0007 - 0.0448i   0.0028 - 0.0898i   0.0063 - 0.1351i   0.0113 - 0.1808i   0.0178 - 0.2273i   0.0258 - 0.2746i   0.0355 - 0.3230i   0.0468 - 0.3726i
+
+      Columns 10 through 18
+
+       0.0600 - 0.4237i   0.0751 - 0.4765i   0.0923 - 0.5314i   0.1117 - 0.5887i   0.1336 - 0.6487i   0.1583 - 0.7118i   0.1860 - 0.7786i   0.2170 - 0.8496i   0.2519 - 0.9255i
+
+      Columns 19 through 27
+
+       0.2911 - 1.0072i   0.3352 - 1.0955i   0.3852 - 1.1918i   0.4418 - 1.2975i   0.5065 - 1.4144i   0.5807 - 1.5451i   0.6665 - 1.6927i   0.7667 - 1.8613i   0.8851 - 2.0567i
+
+      Columns 28 through 36
+
+       1.0268 - 2.2869i   1.1995 - 2.5636i   1.4148 - 2.9047i   1.6914 - 3.3389i   2.0612 - 3.9159i   2.5857 - 4.7313i   3.3998 - 5.9964i   4.8791 - 8.3004i   8.6481 -14.1995i
+
+      Columns 37 through 45
+
+      52.1546 -82.6959i  -9.7052 +14.8683i  -3.0073 + 4.4535i  -0.3326 + 0.4764i   2.2099 - 3.0617i   7.1986 - 9.6519i  54.8155 -71.1486i -17.3938 +21.8612i  -8.7273 +10.6237i
+
+      Columns 46 through 54
+
+      -6.1917 + 7.3014i  -4.9529 + 5.6589i  -4.2083 + 4.6591i  -3.7068 + 3.9772i  -3.3442 + 3.4775i  -3.0688 + 3.0929i  -2.8520 + 2.7860i  -2.6768 + 2.5342i  -2.5321 + 2.3232i
+
+      Columns 55 through 63
+
+      -2.4105 + 2.1433i  -2.3069 + 1.9875i  -2.2176 + 1.8510i  -2.1399 + 1.7301i  -2.0717 + 1.6220i  -2.0113 + 1.5247i  -1.9576 + 1.4364i  -1.9096 + 1.3557i  -1.8663 + 1.2816i
+
+      Columns 64 through 72
+
+      -1.8273 + 1.2132i  -1.7919 + 1.1498i  -1.7597 + 1.0907i  -1.7302 + 1.0353i  -1.7033 + 0.9834i  -1.6786 + 0.9345i  -1.6559 + 0.8882i  -1.6349 + 0.8443i  -1.6156 + 0.8026i
+
+      Columns 73 through 81
+
+      -1.5978 + 0.7629i  -1.5812 + 0.7248i  -1.5659 + 0.6884i  -1.5517 + 0.6534i  -1.5386 + 0.6198i  -1.5264 + 0.5873i  -1.5151 + 0.5559i  -1.5045 + 0.5255i  -1.4948 + 0.4960i
+
+      Columns 82 through 90
+
+      -1.4858 + 0.4674i  -1.4774 + 0.4395i  -1.4696 + 0.4123i  -1.4625 + 0.3858i  -1.4559 + 0.3598i  -1.4498 + 0.3343i  -1.4443 + 0.3093i  -1.4392 + 0.2848i  -1.4346 + 0.2607i
+
+      Columns 91 through 99
+
+      -1.4304 + 0.2369i  -1.4267 + 0.2134i  -1.4233 + 0.1902i  -1.4204 + 0.1673i  -1.4178 + 0.1445i  -1.4157 + 0.1220i  -1.4139 + 0.0996i  -1.4125 + 0.0773i  -1.4114 + 0.0552i
+
+      Columns 100 through 108
+
+      -1.4107 + 0.0331i  -1.4103 + 0.0110i  -1.4103 - 0.0110i  -1.4107 - 0.0331i  -1.4114 - 0.0552i  -1.4125 - 0.0773i  -1.4139 - 0.0996i  -1.4157 - 0.1220i  -1.4178 - 0.1445i
+
+      Columns 109 through 117
+
+      -1.4204 - 0.1673i  -1.4233 - 0.1902i  -1.4267 - 0.2134i  -1.4304 - 0.2369i  -1.4346 - 0.2607i  -1.4392 - 0.2848i  -1.4443 - 0.3093i  -1.4498 - 0.3343i  -1.4559 - 0.3598i
+
+      Columns 118 through 126
+
+      -1.4625 - 0.3858i  -1.4696 - 0.4123i  -1.4774 - 0.4395i  -1.4858 - 0.4674i  -1.4948 - 0.4960i  -1.5045 - 0.5255i  -1.5151 - 0.5559i  -1.5264 - 0.5873i  -1.5386 - 0.6198i
+
+      Columns 127 through 135
+
+      -1.5517 - 0.6534i  -1.5659 - 0.6884i  -1.5812 - 0.7248i  -1.5978 - 0.7629i  -1.6156 - 0.8026i  -1.6349 - 0.8443i  -1.6559 - 0.8882i  -1.6786 - 0.9345i  -1.7033 - 0.9834i
+
+      Columns 136 through 144
+
+      -1.7302 - 1.0353i  -1.7597 - 1.0907i  -1.7919 - 1.1498i  -1.8273 - 1.2132i  -1.8663 - 1.2816i  -1.9096 - 1.3557i  -1.9576 - 1.4364i  -2.0113 - 1.5247i  -2.0717 - 1.6220i
+
+      Columns 145 through 153
+
+      -2.1399 - 1.7301i  -2.2176 - 1.8510i  -2.3069 - 1.9875i  -2.4105 - 2.1433i  -2.5321 - 2.3232i  -2.6768 - 2.5342i  -2.8520 - 2.7860i  -3.0688 - 3.0929i  -3.3442 - 3.4775i
+
+      Columns 154 through 162
+
+      -3.7068 - 3.9772i  -4.2083 - 4.6591i  -4.9529 - 5.6589i  -6.1917 - 7.3014i  -8.7273 -10.6237i -17.3938 -21.8612i  54.8155 +71.1486i   7.1986 + 9.6519i   2.2099 + 3.0617i
+
+      Columns 163 through 171
+
+      -0.3326 - 0.4764i  -3.0073 - 4.4535i  -9.7052 -14.8683i  52.1546 +82.6959i   8.6481 +14.1995i   4.8791 + 8.3004i   3.3998 + 5.9964i   2.5857 + 4.7313i   2.0612 + 3.9159i
+
+      Columns 172 through 180
+
+       1.6914 + 3.3389i   1.4148 + 2.9047i   1.1995 + 2.5636i   1.0268 + 2.2869i   0.8851 + 2.0567i   0.7667 + 1.8613i   0.6665 + 1.6927i   0.5807 + 1.5451i   0.5065 + 1.4144i
+
+      Columns 181 through 189
+
+       0.4418 + 1.2975i   0.3852 + 1.1918i   0.3352 + 1.0955i   0.2911 + 1.0072i   0.2519 + 0.9255i   0.2170 + 0.8496i   0.1860 + 0.7786i   0.1583 + 0.7118i   0.1336 + 0.6487i
+
+      Columns 190 through 198
+
+       0.1117 + 0.5887i   0.0923 + 0.5314i   0.0751 + 0.4765i   0.0600 + 0.4237i   0.0468 + 0.3726i   0.0355 + 0.3230i   0.0258 + 0.2746i   0.0178 + 0.2273i   0.0113 + 0.1808i
+
+      Columns 199 through 201
+
+       0.0063 + 0.1351i   0.0028 + 0.0898i   0.0007 + 0.0448i
+
+- Use the **numel** function to return the number of elements in an array.
+
+Create a variable named n that contains the number of elements in y
+
+        >> n = numel(y)
+        n =
+            201
+
+- The **fft** function in MATLAB uses only the sampled data to compute the Fourier transform. The f variable will represent the frequencies that correspond to the values in yfft.
+
+Create a variable named f that contains a vector which starts at 0, ends at fs*(n-1)/n, and whose elements are spaced by fs/n.
+
+      >> f = 0:(fs/n):fs * (n-1)/n
+
+      f =
+
+        Columns 1 through 18
+
+               0    0.0498    0.0995    0.1493    0.1990    0.2488    0.2985    0.3483    0.3980    0.4478    0.4975    0.5473    0.5970    0.6468    0.6965    0.7463    0.7960    0.8458
+
+        Columns 19 through 36
+
+          0.8955    0.9453    0.9950    1.0448    1.0945    1.1443    1.1940    1.2438    1.2935    1.3433    1.3930    1.4428    1.4925    1.5423    1.5920    1.6418    1.6915    1.7413
+
+        Columns 37 through 54
+
+          1.7910    1.8408    1.8905    1.9403    1.9900    2.0398    2.0896    2.1393    2.1891    2.2388    2.2886    2.3383    2.3881    2.4378    2.4876    2.5373    2.5871    2.6368
+
+        Columns 55 through 72
+
+          2.6866    2.7363    2.7861    2.8358    2.8856    2.9353    2.9851    3.0348    3.0846    3.1343    3.1841    3.2338    3.2836    3.3333    3.3831    3.4328    3.4826    3.5323
+
+        Columns 73 through 90
+
+          3.5821    3.6318    3.6816    3.7313    3.7811    3.8308    3.8806    3.9303    3.9801    4.0299    4.0796    4.1294    4.1791    4.2289    4.2786    4.3284    4.3781    4.4279
+
+        Columns 91 through 108
+
+          4.4776    4.5274    4.5771    4.6269    4.6766    4.7264    4.7761    4.8259    4.8756    4.9254    4.9751    5.0249    5.0746    5.1244    5.1741    5.2239    5.2736    5.3234
+
+        Columns 109 through 126
+
+          5.3731    5.4229    5.4726    5.5224    5.5721    5.6219    5.6716    5.7214    5.7711    5.8209    5.8706    5.9204    5.9701    6.0199    6.0697    6.1194    6.1692    6.2189
+
+        Columns 127 through 144
+
+          6.2687    6.3184    6.3682    6.4179    6.4677    6.5174    6.5672    6.6169    6.6667    6.7164    6.7662    6.8159    6.8657    6.9154    6.9652    7.0149    7.0647    7.1144
+
+        Columns 145 through 162
+
+          7.1642    7.2139    7.2637    7.3134    7.3632    7.4129    7.4627    7.5124    7.5622    7.6119    7.6617    7.7114    7.7612    7.8109    7.8607    7.9104    7.9602    8.0100
+
+        Columns 163 through 180
+
+          8.0597    8.1095    8.1592    8.2090    8.2587    8.3085    8.3582    8.4080    8.4577    8.5075    8.5572    8.6070    8.6567    8.7065    8.7562    8.8060    8.8557    8.9055
+
+        Columns 181 through 198
+
+          8.9552    9.0050    9.0547    9.1045    9.1542    9.2040    9.2537    9.3035    9.3532    9.4030    9.4527    9.5025    9.5522    9.6020    9.6517    9.7015    9.7512    9.8010
+
+        Columns 199 through 201
+
+          9.8507    9.9005    9.9502
+
+- The output values from **fft** are complex numbers. To plot their magnitude, you can use the **abs** function.
+Plot the expression abs(yfft) (y-axis) against f (x-axis).
+
+      >> plot(f, abs(yfft))
+
+This generates the following plot.
+![Screenshot](screenshot15.png)
+
+- Complete! Notice the two spikes on the left side of the plot which correspond to the frequencies of the two sine waves you created earlier. Since the spikes are close together, the signal exhibits the beat phenomenon.
+
+Why are there four spikes? That relates to the Nyquist frequency, which in this case is 5 (or fs/2). When the input vector consists of real numbers, the fft function always returns data whose magnitude is symmetric about the Nyquist frequency. That is, the second half of the plot (after the Nyquist frequency) is just a mirror image of the first half.
+
+### 11. MATLAB Scripts
+#### 11.1 The MATLAB Editor
+
+The MATLAB editor contains the live script where you can run multiple commands together and can see the result immediately. If you select the output, it auto highlights the commands caused it to generate.
+
+mlx -> MATLAB live script extension.
+
+TO run a section of MATLAB commands, you can use **run section** option to run in MATLAB window.
+
+.m -> MATLAB plain code extension.
+
+We can share the commands with others by exporting it as PDF, MLX, or m extension files as per our need.
+
+#### 11.2 The MATLAB Editor (2/2) Practice
+
+ylabel('sine') generates the label for Y Axis
+xlabel('radians') generates the label for X Axis
+
+
+### 12. Logical Arrays
+#### 12.1 Logical Operations and Variables
+
+- Relational operators, such as >, <, ==, and ~= perform comparisons between two values. The outcome of a comparison for equality or inequality is either 1 (true) or 0 (false).
+
+Use the relational operator, >, to test if π is greater than 3.
+
+        >> pi > 3
+        ans =
+          logical
+           1
+After this, we can see variable 'ans' in workspace.
+
+- Notice that the new logical variable can be seen in the workspace window on the right. Logical variables have one of only two possible values: 1 (true) and 0 (false).
+
+Again, test whether π is greater than 3, but this time assign the output to a variable named test.
+
+        >> test = pi > 3
+        test  =
+            logical
+            1
+This time, we can see variable 'test' in workspace.
+
+- You can compare a vector or matrix to a single scalar value using relational operators. The result is a logical array of the same size as the original array.
+
+      >> [5 10 15] > 12
+      ans =
+          0    0    1
+
+Try creating a variable named x that contains the output of testing whether each element of v1 is greater than 5.
+
+      >> x = v1 > 5
+      x =
+        7×1 logical array
+         0
+         1
+         0
+         0
+         0
+         1
+         1
+
+- Corresponding elements of two arrays can be compared using relational operators. The two arrays must be the same size and the result is a logical array of the same size.
+
+      >> [5 10 15] > [6 9 20]
+      ans =
+          0    1    0
+
+Try creating a variable named y that contains the output of testing whether each element of v1 is greater than the corresponding element of v2.
+
+      >> y = v1>v2
+      y =
+        7×1 logical array
+         1
+         1
+         0
+         0
+         0
+         1
+         1
+
+- You may have noticed that just like numerical operators, logical operators are vectorized.
+
+#### 12.2 Combining Logical Conditions
+
+- MATLAB contains logical operators which combine multiple logical conditions such as AND (&) and OR (|). The & operator returns true (1) if both elements are true, and false (0) otherwise. For example:
+
+    >> x = (pi > 5) & (0 < 6)
+    x =
+         0
+
+Try creating a variable named test that holds the result of testing whether π is greater than 3 AND x is greater than 0.9.
+
+    >> test = (pi > 3) & (x > 0.9)
+    test =
+      logical
+       0
+
+- Try creating a logical array named vt. Elements in the array vt should be true where v1 is both greater than 5 AND where v1 is greater than v2.
+
+      >> vt = (v1 > 5) & ( v1 > v2)
+      vt =
+        7×1 logical array
+         0
+         1
+         0
+         0
+         0
+         1
+         1
+
+#### 12.3 Logical Indexing
+
+- You can use a logical array as an array index, in which case MATLAB extracts the array elements where the index is true. The following example will extract all elements in v1 that are greater than six.
+
+      >> v = v1(v1 > 6)
+      v =
+          6.6678
+          9.0698
+
+Try creating a variable v containing all the elements in v1 that are less than four.
+
+      >> v = v1(v1 < 4)
+      v =
+          1.5177
+          3.6375
+
+
+- Try creating a variable s that contains the elements in sample corresponding to where v1 is less than 4.
+
+      >> s = sample(v1<4)
+      s =
+          19
+          20
+
+- You can use logical indexing to reassign values in an array. For example, if you wish to replace all values in the array x that are equal to 999 with the value 0, use the following syntax.
+**x(x==999) = 0**
+
+Try modifying v1 so that any value greater than 5 is replaced with the value 10.
+
+        >> v1(v1 > 5) = 10
+        v1 =
+            4.0753
+           10.0000
+            1.5177
+            3.6375
+            4.7243
+           10.0000
+           10.0000
+
+### 13. Programming
+#### 13.1 Decision Branching
+
+- At times, you may want to execute a section of code only if a certain condition is met. You can do this using an if statement. Each if statement must contain one if keyword and one end keyword, and code between the if and end keywords is executed only when the condition is met.
+
+        x = rand;
+        if x > 0.5
+            y = 3; %Executed only if x > 0.5
+        end
+
+Try modifying the **decisionBranching.mlx** live script so that the line B = sqrt(A) is executed only when A is greater than 0.
+
+      B = sqrt(A);    
+
+is modified to
+
+      if A>0
+          B = sqrt(A);    
+      end
+
+- Often in these situations, you may want to execute some other code if the condition is not met. To do this, you can use the else keyword, as shown.
+
+      x = rand;
+      if x > 0.5
+          y = 3;
+      else
+          y = 4;
+      end
+
+Try modifying the **decisionBranching.mlx** live script so that when the if condition is not satisfied, the live script will set the variable B to 0.
+
+      if A>0
+          B = sqrt(A);    
+      end
+
+is modified to
+
+      if A>0
+          B = sqrt(A);    
+      else
+          B =0;
+      end
+
+#### 13.2 For Loops
+
+- A common programming task is to execute a section of code repeatedly. In MATLAB, you can do this with a for loop.
+
+      for i = 1:3
+          disp(i)
+      end
+
+Notice that the for loop contains a single end keyword, similar to if statements.
+
+When this code is run, the code between the for and end keywords will be executed three times in this case, as the loop counter (i) progresses from 1:3 (1, 2, and 3).
+Wrap the disp function call in the live script forLoop.mlx in a loop so that the line of code executes 5 times.
+
+For the first execution of the loop, idx should have a value of 1, and it should increase by 1 each consecutive iteration.
+
+      disp(x(idx))  is modified to
+
+      for idx = 1:5
+        disp(x(idx))
+      end
+
+### 14. Final Project
+#### 14.1 Project - Stellar Motion
+
+- The spectra data was collected at evenly-spaced frequencies, and you know the starting frequency value (λstart), the spacing (λdelta), and the number of observations.
+
+Create a variable named lambdaEnd (λend) that contains the value of the last wavelength in the recorded spectrum. You can calculate lambdaEnd with the equation λend = λstart + (nObs-1)λdelta.
+
+      >> lambdaEnd = lambdaStart + ((nObs-1) * lambdaDelta)
+      lambdaEnd =
+        679.8600
+
+- Remember that the colon (:) operator creates row vectors with a fixed stepsize. Use the transpose operator (') to turn a row into a column.
+
+Make a column vector named lambda (λ) containing the wavelengths in the spectrum, from λstart to λend, in steps of λdelta
+
+      >> lambda = (lambdaStart : lambdaDelta : lambdaEnd)'
+      lambda =
+      prints its column vector ( not printed due to length of result)
+
+- Each column of spectra is the spectrum of a different star. The sixth column is the spectrum of star HD 94028.
+Extract the sixth column of spectra to a vector named s.
+
+      >> s = spectra(:,6)
+      s =
+      prints its column vector ( not printed due to length of result)
+
+- Use the loglog function in the same way as the plot function to obtain log scales for both axes.
+Plot the spectra (s) as a function of wavelength (lambda), using log scales on both axes. Use point markers (.) and a solid line (-) connecting the points.
+
+      >> loglog(lambda, s, '.-')
+
+      This generates the following plot.
+![Screenshot](screenshot16.png)
+
+- Recall that the min function allows two outputs, the second of which is the index at which the minimum value occurred. This index corresponds to the location of the Hydrogen-alpha line.
+Create two variables, sHa and idx that contain the minimum value of s and the index where the minimum value occurred.
+
+        >> [sHa,idx] = min(s)
+        sHa =
+           9.8010e-14
+        idx =
+           191
+
+- Use **idx** to index into lambda to find the wavelength of the Hydrogen-alpha line. Store the result as lambdaHa (λHa)
+
+      >> lambdaHa = lambda(idx)
+      lambdaHa =
+        656.6200
+
+- Complete! You have determined the wavelength of the Hydrogen-alpha line of HD 94028 to be 656.62 nm, which is slightly longer than the laboratory value of 656.28 nm. In the next section you will use this to determine the speed of the star relative to the earth.
+
+
+#### 14.2 Project - Stellar Motion (Script)
+
+- The live script findRedShift implements the steps from the previous section to find the Hydrogen-alpha wavelength.
+
+Add to findRedShift.mlx so that it adds the location of the Hydrogen-alpha line to the spectrum plot. At the end of the script, add to the existing graph by plotting the single point x = lambdaHa, y = sHa as a red square ('rs') with a marker size ('MarkerSize') of 8.
+
+      >> hold
+      loglog(lambdaHa,sHa,'rs','MarkerSize',8)
+
+It adds the a marker in the existing graph and resultant graph is below.
+![Screenshot](screenshot17.png)
+
+- The live script findRedShift finds the Hydrogen-alpha wavelength of the star. From this, you can calculate the amount of redshift using the formula z = (λHa / 656.28) - 1. You can then calculate the speed by multiplying the redshift factor by the speed of light (299792.458 km/s).
+
+Add to findRedShift.mlx so that it calculates the redshift factor and the speed (in km/s) at which the star is moving away from the earth. Save the redshift factor in a variable called z and the speed in a variable called speed.
+
+      >> z = (lambdaHa/656.28) -1
+         speed =  z * 299792.458
+      The Result for above command is below
+         z = 5.1807e-04
+         speed = 15.5313
+
+- Having created a live script for finding the redshift, you can easily modify the script to repeat the calculation on any star in the spectra matrix.
+
+Modify findRedShift.mlx so that it performs the red shift calculation on the second star in spectra, not the sixth.
+
+>> s = spectra(:,6); to extract the second column of s instead of the sixth. to
+
+modified to
+
+      >> s = spectra(:,2);
+
+- Using a MATLAB script, you can easily calculate the red shift for any star in the data set. You could even perform the same operations for all of the stars in the collected data set.
+However, so far you have found the Hydrogen-alpha wavelength of the star by finding the minimum value of the spectral intensities (s). For some stars, the Hydrogen-alpha line occurs at the maximum intensity value, rather than the minimum. Therefore, a more robust approach is to find the maximum deviation from the anomaly, where the anomaly is defined as the absolute value of the difference between s and mean(s).
+
+
+By this, you should be confident enough to play with MATLAB.
+
+Thanks.
