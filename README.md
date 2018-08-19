@@ -392,3 +392,53 @@ The text file with name elements.txt is imported as singular matrix. So, you can
 ![Screenshot](screenshot1.png)
 
 If any empty data will be replaces as NaN -> not a number
+
+### 5. Indexing into and Modifying Arrays
+
+#### 5.1 Indexing into Arrays
+
+- You can extract values from an array using row, column indexing.
+
+      >> x = A(5,7);
+
+This syntax extracts the value in the 5th row and 7th column of A and assigns the result to the variable x.
+
+The **data** variable contains the following content.
+
+      >> data
+      data =
+          3.0000    0.5300    4.0753       NaN
+         18.0000    1.7800    6.6678    2.1328
+         19.0000    0.8600    1.5177    3.6852
+         20.0000    1.6000    3.6375    8.5389
+         21.0000    3.0000    4.7243   10.1570
+         23.0000    6.1100    9.0698    2.8739
+         38.0000    2.5400    5.3002    4.4508
+
+Now, Try creating a variable v that contains the value in the 6th row and 3rd column of the variable **data**.
+
+      >> v= data(6,3)
+      v =
+      9.0698
+
+- You can use the MATLAB keyword end as either a row or column index to reference the last element.
+
+      >> x = A(end,2);
+
+Now try using the end keyword to obtain the value in the last row and 3rd column of the variable data. Assign this value to a variable named v.
+
+      >> v = data(end,3);
+      v =
+          5.3002
+
+- Note that you can use arithmetic with the keyword end. For example:
+
+      >> x = A(end-1,end-2)
+
+Try creating a scalar variable p that contains the value in the second to last (end-1) row and 3rd column of data.
+
+      >> p = data(end-1,3)
+      p =
+          9.0698
+
+#### 5.2 Extracting Multiple Elements
