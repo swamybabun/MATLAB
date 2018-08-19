@@ -733,7 +733,7 @@ Try creating a plot with sample on the x-axis and mass1 on the y-axis.
 
         >> plot(sample,mass1)  This outputs the below plot.
 
-        ![Screenshot](screenshot3.png)
+![Screenshot](screenshot3.png)
 
 - The plot function accepts an additional argument that allows you to specify the color, line style, and marker style using different symbols in single quotes.
 
@@ -743,7 +743,7 @@ The command above plots a red (r) dashed (--) line with a circle (o) as a marker
 Try plotting mass2 (y-axis) against sample (x-axis). Use red (r) star (*) markers and no line in your plot.
 
         >> plot(sample, mass2,'r*') This outputs the below plot.
-        ![Screenshot](screenshot4.png)
+![Screenshot](screenshot4.png)
 
 - Notice that the first plot you created no longer exists. To plot one line on top of another, use the **hold on** command to hold the previous plot while you add another line. You can also use the **hold off** command to return to the default behavior.
 Issue the **hold on** command.
@@ -751,7 +751,7 @@ Issue the **hold on** command.
 - Now, plot mass1 (y-axis) against sample (x-axis) with black (k) square (s) markers and no line. [Line specification options](http://www.mathworks.com/help/matlab/ref/linespec.html)
 
         >> plot(sample,mass1,'ks') This outputs the below plot.
-        ![Screenshot](screenshot5.png)
+]![Screenshot](screenshot5.png)
 
 - Try closing all open figure windows by issuing the close all command.
 
@@ -762,4 +762,4 @@ Plot the vector v1 using the command below.
 
         >> plot(v1)
         This outputs the following plot
-        ![Screenshot](screenshot6.png)
+![Screenshot](screenshot6.png)
