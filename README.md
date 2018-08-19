@@ -1,7 +1,15 @@
 # MATLAB
 MATLAB Tutorial
 
-This tutorial is for beginners who wants to learn MATLAB. Let's begin with commands
+This tutorial is for beginners who wants to learn MATLAB. Let's begin with commands.
+
+### What is MATLAB ..?
+MATLAB (matrix laboratory) is a multi-paradigm numerical computing environment and proprietary programming language developed by MathWorks. ... Although MATLAB is intended primarily for numerical computing,
+
+
+#### Download & Installation:
+
+Download the latest MATLAB from [Download MATLAB](https://in.mathworks.com/downloads/web_downloads) and install it as per your operating system. To get free trail for limited days, please register with your email in MATLAB website.
 
 ##### Entering Commands
 - You can execute commands by entering them in the command window after the MATLAB prompt (>>) and pressing the Enter key.
@@ -133,4 +141,4 @@ Try creating a 1-by-2 row vector named x that contains **sqrt(10)** as its first
         >> x = [sqrt(10) pi^2]
           x =
           3.1623 9.8696
-- 
+-
