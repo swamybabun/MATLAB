@@ -74,11 +74,11 @@ MATLAB (matrix laboratory) is a multi-paradigm numerical computing environment a
 
 Download the latest MATLAB from [Download MATLAB](https://in.mathworks.com/downloads/web_downloads) and install it as per your operating system. To get free trail for limited days, please register with your email in MATLAB website.
 
-1. Course Overview
+### Course Overview
 
 This explains about MATLAB.
 
-2. Entering Commands
+### Entering Commands
 
 - You can execute commands by entering them in the command window after the MATLAB prompt (>>) and pressing the Enter key.
 - Unless otherwise specified, MATLAB stores calculations in a variable named **ans**.
@@ -135,9 +135,9 @@ You can now move to the next section, or, if you are interested, explore a sampl
       [Descriptive statistics](http://www.mathworks.com/help/matlab/descriptive-statistics.html)
       [Linear algebra](http://www.mathworks.com/help/matlab/linear-algebra.html)
 
-3. Vectors and Matrices
+### Vectors and Matrices
 
-3.1 Manually Entering Arrays
+#### Manually Entering Arrays
 
 - All MATLAB variables are arrays, meaning that each variable can contain multiple elements. A single number, called a scalar, is actually a 1-by-1 array, meaning it contains 1 row and 1 column.
 
@@ -212,7 +212,7 @@ Try creating a 1-by-2 row vector named x that contains **sqrt(10)** as its first
           x =
           3.1623 9.8696
 
-3.2 Creating Evenly-Spaced Vectors
+#### Creating Evenly-Spaced Vectors
 
 - It is common to create vectors containing evenly spaced numbers, such as the vector below.
 
@@ -305,4 +305,4 @@ In a single command, create a column vector named x that starts at 5, ends at 9 
           7
           9
 
-3.3 Array Creation Functions
+#### Array Creation Functions
