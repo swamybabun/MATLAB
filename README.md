@@ -74,7 +74,12 @@ MATLAB (matrix laboratory) is a multi-paradigm numerical computing environment a
 
 Download the latest MATLAB from [Download MATLAB](https://in.mathworks.com/downloads/web_downloads) and install it as per your operating system. To get free trail for limited days, please register with your email in MATLAB website.
 
-##### Entering Commands
+1. Course Overview
+
+This explains about MATLAB.
+
+2. Entering Commands
+
 - You can execute commands by entering them in the command window after the MATLAB prompt (>>) and pressing the Enter key.
 - Unless otherwise specified, MATLAB stores calculations in a variable named **ans**.
 - The equals sign (=) in MATLAB is the assignment operator, meaning that the expression on the right of the equals sign is assigned to the variable on the left. So, when you enter x = 3+4, MATLAB first evaluates 3+4 and then assigns the result (7) to the variable x.
