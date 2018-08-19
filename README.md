@@ -743,7 +743,6 @@ The command above plots a red (r) dashed (--) line with a circle (o) as a marker
 Try plotting mass2 (y-axis) against sample (x-axis). Use red (r) star (*) markers and no line in your plot.
 
         >> plot(sample, mass2,'r*') This outputs the below plot.
-
 ![Screenshot](screenshot4.png)
 
 - Notice that the first plot you created no longer exists. To plot one line on top of another, use the **hold on** command to hold the previous plot while you add another line. You can also use the **hold off** command to return to the default behavior.
@@ -752,7 +751,6 @@ Issue the **hold on** command.
 - Now, plot mass1 (y-axis) against sample (x-axis) with black (k) square (s) markers and no line. [Line specification options](http://www.mathworks.com/help/matlab/ref/linespec.html)
 
         >> plot(sample,mass1,'ks') This outputs the below plot.
-
 ]![Screenshot](screenshot5.png)
 
 - Try closing all open figure windows by issuing the close all command.
@@ -764,5 +762,298 @@ Plot the vector v1 using the command below.
 
         >> plot(v1)
         This outputs the following plot
-
 ![Screenshot](screenshot6.png)
+
+- The plot function accepts optional additional inputs consisting of a property name and an associated value.
+
+        >> plot(y,'LineWidth',5)
+
+The command above plots a heavy line. You can learn more about available properties in the documentation for Lineseries Properties. Now try plotting v1 with a line width of 3.
+
+        >> plot(v1,'LineWidth',3)
+        This outputs the following plot
+![Screenshot](screenshot7.png)
+
+- The plot function accepts a property name and property value pair after the plotted arguments and line specifier.
+
+        >> plot(x,y,'ro-','LineWidth',5)
+
+Try plotting v1 (y-axis) against sample (x-axis) with red (r) circle (o) markers with a line width of 4.
+
+        >> plot(sample,v1,'ro','LineWidth',4)
+        This outputs the following plot
+![Screenshot](screenshot8.png)
+
+Further resources:
+- [Line Specifiers](http://www.mathworks.com/help/matlab/ref/linespec.html)
+- [Plotting Functions](http://www.mathworks.com/help/matlab/creating_plots/using-high-level-plotting-functions.html)
+- [Plots](http://www.mathworks.com/help/matlab/learn_matlab/plots.html)
+
+
+#### 9.2 Annotating Plots
+
+- Labels can be added to plots using plot annotation functions, such as title. The input to these functions is a string. Strings in MATLAB are enclosed in single quotes (').
+
+        >> title('Plot Title')
+
+Try adding the title 'Sample Densities' to the existing plot.
+
+        >> title('Sample Densities')
+
+- Use the ylabel function to add the label 'Density (g/cm^3)'.
+
+        >> ylabel('Density (g/cm^3)')
+
+This outputs the following plot and observe plot title also in below image.
+        ![Screenshot](screenshot9.png)
+
+use **xlabel()** function to label the X axis.
+
+        >> xlabel('Distance')
+
+#### 9.3 Plots Tab
+
+- Select the variables you want to plot and then go to plots tab and select the plot type you want to generate. That's all.
+It generates the plot for selected variables.
+
+
+### 10. Review Problems
+
+#### 10.1 Project - Electricity Usage
+
+- Electricity data is stored in a file named electricity.mat. Use load to bring that data into MATLAB.
+
+      >> load electricity.mat
+
+- Enter usage at the command prompt to see the values in usage.
+
+      >> usage
+
+-  In MATLAB, NaN (or, "Not a Number") is used to represent missing data.
+One of the elements in the **usage** variable has a value of NaN. Replace this value with the value 2.74.
+
+      >> usage
+      usage =
+          3.0484    2.5848    2.6408
+          2.8610    2.5530    **NaN**
+          3.2602    2.7084    2.7345
+          3.3420    2.8097    2.8019
+          3.3555    2.9167    2.7960
+          3.4234    2.9299    2.8579
+          3.5268    3.1561    2.8597
+          3.9185    3.3057    2.8757
+          3.9718    3.4761    2.9984
+          3.8540    3.4748    2.8998
+          3.8934    3.5968    2.6826
+          4.3127    3.7088    2.8427
+          4.2153    3.7172    2.8301
+          4.1711    3.7257    2.8542
+          4.6605    3.9367    2.8512
+          4.7528    4.0497    2.8671
+          4.4847    3.9975    2.8715
+          4.6216    4.1299    2.8487
+          4.4413    3.9229    2.5176
+          4.9899    4.1266    2.7653
+          4.9913    4.1311    2.8143
+          4.9864    4.1463    2.8135
+          4.6270    4.1205    2.7001
+
+Replacing NaN with given value. The position of NaN is 2nd row and 3rd column.
+
+    >> usage(2,3) = 2.74
+
+- The residential data is stored in the first column. Create a variable **res** that contains the first column of **usage**.
+
+      >> res = usage(;,1)
+      res =
+          3.0484
+          2.8610
+          3.2602
+          3.3420
+          3.3555
+          3.4234
+          3.5268
+          3.9185
+          3.9718
+          3.8540
+          3.8934
+          4.3127
+          4.2153
+          4.1711
+          4.6605
+          4.7528
+          4.4847
+          4.6216
+          4.4413
+          4.9899
+          4.9913
+          4.9864
+          4.6270
+
+- The commercial data is stored in the second column. Create a variable **comm** that contains the second column of **usage**.
+
+          >> comm = usage(:,2)
+          comm =
+              2.5848
+              2.5530
+              2.7084
+              2.8097
+              2.9167
+              2.9299
+              3.1561
+              3.3057
+              3.4761
+              3.4748
+              3.5968
+              3.7088
+              3.7172
+              3.7257
+              3.9367
+              4.0497
+              3.9975
+              4.1299
+              3.9229
+              4.1266
+              4.1311
+              4.1463
+              4.1205
+
+- The industrial data is stored in the third column. Create a variable ind that contains the third column of usage.
+
+            >> ind = usage(:,3)
+            ind =
+                2.6408
+                2.7400
+                2.7345
+                2.8019
+                2.7960
+                2.8579
+                2.8597
+                2.8757
+                2.9984
+                2.8998
+                2.6826
+                2.8427
+                2.8301
+                2.8542
+                2.8512
+                2.8671
+                2.8715
+                2.8487
+                2.5176
+                2.7653
+                2.8143
+                2.8135
+                2.7001
+
+- The usage data was collected annually between the years 1991 to 2013. The **yrs** variable you create will help you to plot the data over a meaningful range.
+Create a column vector named **yrs** that represents the years starting at 1991 and ending with 2013.
+
+              >> yrs = (1991:2013)'
+              yrs =
+                      1991
+                      1992
+                      1993
+                      1994
+                      1995
+                      1996
+                      1997
+                      1998
+                      1999
+                      2000
+                      2001
+                      2002
+                      2003
+                      2004
+                      2005
+                      2006
+                      2007
+                      2008
+                      2009
+                      2010
+                      2011
+                      2012
+                      2013
+
+- Plot **res** (y-axis) against **yrs** (x-axis) with a blue (b) dashed line (--).
+
+          >> plot(yrs, res, 'b--')
+
+This generates the below plot.
+![Screenshot](screenshot10.png)
+
+- Issue the **hold on** command so that you can add another line to the existing plot.
+
+          >> hold on
+
+- Plot **comm** (y-axis) against **yrs** (x-axis) with a black (k) dotted line (**:**).
+
+        >> plot(yrs, comm, 'k:')
+
+This generates the below plot.
+![Screenshot](screenshot11.png)
+
+- Plot **ind** (y-axis) against **yrs** (x-axis) with a magenta (m) dash-dot line (**-.**).
+
+        >> plot(yrs, ind, 'm-.')
+
+This generates the below plot
+![Screenshot](screenshot12.png)
+
+
+- Add the title 'July Electricity Usage' to the existing plot.
+
+        >> title('July Electricity Usage')
+
+- Use the legend function to specify a legend.
+
+        >> legend('a','b','c')
+
+Add the legend values 'res', 'comm', and 'ind' to the existing plot.
+
+        >> legend('res', 'comm', 'ind')
+
+The above title and legend commands does the following effect to plot. See the plot below.
+![Screenshot](screenshot13.png)
+
+- Complete! When looking at the figure, it is clear that the industrial sector's electricity usage is fairly consistent and does not seem to fluctuate as much as the residential and commercial sectors.
+
+#### 10.2 Project - Audio Frequency
+
+- Info: **fs** will represent the sampling frequency of the audio signal.
+First, create a variable named **fs** that contains the value 10
+
+        >>fs = 10
+        fs =
+            10
+
+- **t** will represent the times when the audio signal was sampled. Remember you can use a semicolon (;) to suppress the output of a command to prevent cluttering the Command Window.
+
+Create a vector named t that starts at 0, ends at 20, and whose elements are spaced by 1/fs
+
+          >> t = 0:1/fs:20
+          t =
+            Columns 1 through 18
+                   0    0.1000    0.2000    0.3000    0.4000    0.5000    0.6000    0.7000    0.8000    0.9000    1.0000    1.1000    1.2000    1.3000    1.4000    1.5000    1.6000    1.7000
+            Columns 19 through 36
+              1.8000    1.9000    2.0000    2.1000    2.2000    2.3000    2.4000    2.5000    2.6000    2.7000    2.8000    2.9000    3.0000    3.1000    3.2000    3.3000    3.4000    3.5000
+            Columns 37 through 54
+              3.6000    3.7000    3.8000    3.9000    4.0000    4.1000    4.2000    4.3000    4.4000    4.5000    4.6000    4.7000    4.8000    4.9000    5.0000    5.1000    5.2000    5.3000
+            Columns 55 through 72
+              5.4000    5.5000    5.6000    5.7000    5.8000    5.9000    6.0000    6.1000    6.2000    6.3000    6.4000    6.5000    6.6000    6.7000    6.8000    6.9000    7.0000    7.1000
+            Columns 73 through 90
+              7.2000    7.3000    7.4000    7.5000    7.6000    7.7000    7.8000    7.9000    8.0000    8.1000    8.2000    8.3000    8.4000    8.5000    8.6000    8.7000    8.8000    8.9000
+            Columns 91 through 108
+              9.0000    9.1000    9.2000    9.3000    9.4000    9.5000    9.6000    9.7000    9.8000    9.9000   10.0000   10.1000   10.2000   10.3000   10.4000   10.5000   10.6000   10.7000
+            Columns 109 through 126
+             10.8000   10.9000   11.0000   11.1000   11.2000   11.3000   11.4000   11.5000   11.6000   11.7000   11.8000   11.9000   12.0000   12.1000   12.2000   12.3000   12.4000   12.5000
+            Columns 127 through 144
+             12.6000   12.7000   12.8000   12.9000   13.0000   13.1000   13.2000   13.3000   13.4000   13.5000   13.6000   13.7000   13.8000   13.9000   14.0000   14.1000   14.2000   14.3000
+            Columns 145 through 162
+             14.4000   14.5000   14.6000   14.7000   14.8000   14.9000   15.0000   15.1000   15.2000   15.3000   15.4000   15.5000   15.6000   15.7000   15.8000   15.9000   16.0000   16.1000
+            Columns 163 through 180
+             16.2000   16.3000   16.4000   16.5000   16.6000   16.7000   16.8000   16.9000   17.0000   17.1000   17.2000   17.3000   17.4000   17.5000   17.6000   17.7000   17.8000   17.9000
+            Columns 181 through 198
+             18.0000   18.1000   18.2000   18.3000   18.4000   18.5000   18.6000   18.7000   18.8000   18.9000   19.0000   19.1000   19.2000   19.3000   19.4000   19.5000   19.6000   19.7000
+            Columns 199 through 201
+             19.8000   19.9000   20.0000
