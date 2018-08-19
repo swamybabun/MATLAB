@@ -205,4 +205,97 @@ Try creating a 1-by-2 row vector named x that contains **sqrt(10)** as its first
           x =
           3.1623 9.8696
 
--
+#### 3.2 Creating Evenly-Spaced Vectors
+
+- It is common to create vectors containing evenly spaced numbers, such as the vector below.
+
+        >> y = [5 6 7 8]
+        y =
+            5    6    7    8
+
+Try creating a row vector named x that contains the values 1, 2, and 3, in that order.
+
+        >> x = [1 2 3]
+          x =
+          1  2  3
+
+- For long vectors, entering individual numbers is not practical. An alternative, shorthand method for creating evenly spaced vectors is to use the : operator and specify only the start and end points: **first:last**.
+
+        >> y = 5:8
+        y =
+            5    6    7    8
+
+Try recreating the row vector named x (still with values 1, 2, and 3), but this time using the : operator.
+
+       >> x = 1:3
+       x =
+          1  2  3
+
+- The : operator uses a default spacing of 1, however you can specify your own spacing, as shown below.
+
+      >> x = 20:2:26
+      x =
+          20    22    24    26
+
+Try creating a row vector named x that starts at 1, ends at 5, and each element is separated by 0.5.
+
+      >> x = 1:0.5:5
+      x =
+      1.0000  1.5000  2.0000  2.5000  3.0000  3.5000  4.0000  4.5000  5.0000
+
+An Another Example
+
+      >> x = 3:2:13
+      x =
+      3 5 7 9 11 13
+
+- If you know the number of elements you want in a vector (instead of the spacing between each element), you could instead use the linspace function: linspace(first,last,number_of_elements). Note the use of commas (,) to separate inputs to the linspace function.
+
+      >> x = linspace(0,1,5)
+      x =
+          0    0.250    0.500    0.750    1.000
+
+Try creating a row vector named x that starts at 1, ends at 10, and contains 5 elements.
+
+      >> x = linspace(1,10,5)
+      x =
+           1.0000    3.2500    5.5000    7.7500   10.0000
+
+- Both linspace and the : operator create row vectors. However, you can convert a row vector into a column vector using the transpose operator (').
+
+      >> x = 1:3;
+      >> x = x'
+      x =
+          1
+          2
+          3
+
+Transpose x from a row vector to a column vector using the transpose operator.
+
+      >> x =
+           1.0000    3.2500    5.5000    7.7500   10.0000
+      >> x = x'
+      x =
+        1.0000    
+        3.2500    
+        5.5000    
+        7.7500   
+        10.0000
+
+- You can create column vectors in a single command by creating the row vector and transposing it all on one line. Note the use of parentheses here to specify the order of operations.
+
+      >> x = (1:2:5)'
+      x =
+          1
+          3
+          5
+
+In a single command, create a column vector named x that starts at 5, ends at 9 and has elements that are spaced by 2.
+
+      >> x = (5:2:9)'
+      x =
+          5
+          7
+          9
+
+#### 3.3 Array Creation Functions
