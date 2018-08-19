@@ -130,7 +130,9 @@ You can now move to the next section, or, if you are interested, explore a sampl
       [Descriptive statistics](http://www.mathworks.com/help/matlab/descriptive-statistics.html)
       [Linear algebra](http://www.mathworks.com/help/matlab/linear-algebra.html)
 
-##### Manually Entering Arrays
+3. Vectors and Matrices
+
+3.1 Manually Entering Arrays
 
 - All MATLAB variables are arrays, meaning that each variable can contain multiple elements. A single number, called a scalar, is actually a 1-by-1 array, meaning it contains 1 row and 1 column.
 
@@ -205,7 +207,7 @@ Try creating a 1-by-2 row vector named x that contains **sqrt(10)** as its first
           x =
           3.1623 9.8696
 
-#### 3.2 Creating Evenly-Spaced Vectors
+3.2 Creating Evenly-Spaced Vectors
 
 - It is common to create vectors containing evenly spaced numbers, such as the vector below.
 
@@ -298,4 +300,4 @@ In a single command, create a column vector named x that starts at 5, ends at 9 
           7
           9
 
-#### 3.3 Array Creation Functions
+3.3 Array Creation Functions
