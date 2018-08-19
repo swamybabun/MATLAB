@@ -306,3 +306,89 @@ In a single command, create a column vector named x that starts at 5, ends at 9 
           9
 
 #### Array Creation Functions
+
+- MATLAB contains many functions that help you to create commonly used matrices, such as matrices of random numbers.
+
+      >> x = rand(2)
+      x =
+          0.8147    0.1270
+          0.9058    0.9134
+
+Note that the 2 in the command rand(2) specifies that the output will be a 2-by-2 matrix of random numbers.
+Try creating a variable named x that is a 5-by-5 matrix of random numbers.
+
+      >> x = rand(5)
+      x =
+          0.8147    0.0975    0.1576    0.1419    0.6557
+          0.9058    0.2785    0.9706    0.4218    0.0357
+          0.1270    0.5469    0.9572    0.9157    0.8491
+          0.9134    0.9575    0.4854    0.7922    0.9340
+          0.6324    0.9649    0.8003    0.9595    0.6787
+
+- Many matrix creation functions allow you to input one number to create a square matrix (n-by-n) or input two numbers to create nonsquare matrices.
+      >> x = rand(2)
+      x =
+          0.8147    0.1270
+          0.9058    0.9134    >> x = rand(2,3)
+      x =
+          0.6324    0.2785    0.9575
+          0.0975    0.5469    0.9649
+
+Try using rand to create an array that contains 5 rows and 1 column. Assign the result to a variable named x.
+
+      >>x = rand(5,1)
+      x =
+          0.7577
+          0.7431
+          0.3922
+          0.6555
+          0.1712
+
+- Now try using the zeros function to create a matrix of all zeros that has 6 rows and 3 columns (6-by-3). Assign the result to a variable named x.
+
+      >> x = zeros(6,3)
+      x =
+           0     0     0
+           0     0     0
+           0     0     0
+           0     0     0
+           0     0     0
+           0     0     0
+
+### 4. Importing Data
+
+#### 4.1 Saving and Loading Variables
+
+-You can save variables in your workspace to a MATLAB specific file format called a MAT-file using the save command.
+
+      >> save foo x
+
+The command above saves a variable named **x** to a MAT-file named **foo.mat**.
+Try saving the workspace variable **data** to a file named **datafile.mat**
+
+      >> save  datafile data
+
+- Now, use **clear** to empty the workspace.
+
+      >> clear
+
+- You can load variables from a MAT-file using the load command.
+
+      >> load foo
+
+Try loading the variables from the file datafile.mat.
+
+      >> load  datafile
+
+#### 4.2 Import Tool
+
+- You can import the text file, image data, spreadsheet in to MATLAB.
+Once you import the file, the data of the file will be saved to a variable of that file name.
+
+You can refer to the image here.
+
+The text file with name elements.txt is imported as singular matrix. So, you can see the variable named as **elements** in workspace.
+
+![Screenshot](screenshot1.png)
+
+If any empty data will be replaces as NaN -> not a number
