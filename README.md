@@ -226,7 +226,7 @@ Try creating a row vector named x that contains the values 1, 2, and 3, in that 
           x =
           1  2  3
 
-- For long vectors, entering individual numbers is not practical. An alternative, shorthand method for creating evenly spaced vectors is to use the : operator and specify only the start and end points: **first:last**.
+- For long vectors, entering individual numbers is not practical. An alternative, shorthand method for creating evenly spaced vectors is to use the **:** operator and specify only the start and end points: **first:last**.
 
         >> y = 5:8
         y =
@@ -238,7 +238,7 @@ Try recreating the row vector named x (still with values 1, 2, and 3), but this 
        x =
           1  2  3
 
-- The : operator uses a default spacing of 1, however you can specify your own spacing, as shown below.
+- The **:** operator uses a default spacing of 1, however you can specify your own spacing, as shown below.
 
       >> x = 20:2:26
       x =
