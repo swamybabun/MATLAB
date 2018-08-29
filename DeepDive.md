@@ -5,11 +5,11 @@
 - Variable names are case sensitive.
 
 
-- Create column vector
+- Create row vector
 
  x = [1,2,3,4,5]
 
- - Create row vector
+ - Create column vector
 
  y = [1;3;4;5;6;8]
 
@@ -19,3 +19,15 @@
 xlabel() and ylabel() function
 
 title() for naming the plot.
+
+- creating uniformed spaced Vectors
+
+ - with a given spacing use : operator
+
+ 10:5:50  ==> This creates a vector from 10 to 50 with spacing as 5 ...10,15,20,25...50
+
+ - For number of elements use linspace function.
+
+- Element wise Operators  ==> .* , ./ , .^
+
+These are useful for applying a calculation over all elements in a vector.
