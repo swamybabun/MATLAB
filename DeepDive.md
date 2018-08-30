@@ -15,9 +15,11 @@
 
 - Labelling x and y axis.
 
-xlabel() and ylabel() function
+xlabel() and ylabel() function <br>
 
-title() for naming the plot.
+title() for naming the plot. <br>
+
+legend() for adding a legend to the plot. <br>
 
 - creating uniformed spaced Vectors
 
