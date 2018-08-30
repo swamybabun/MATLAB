@@ -13,7 +13,6 @@
 
  y = [1;3;4;5;6;8]
 
-
 - Labelling x and y axis.
 
 xlabel() and ylabel() function
@@ -28,6 +27,14 @@ title() for naming the plot.
 
  - For number of elements use linspace function.
 
-- Element wise Operators  ==> .* , ./ , .^
+- Element wise Operators  ==> .* , ./ , .^ .
+
++ and -  can be used as it is.
 
 These are useful for applying a calculation over all elements in a vector.
+
+- Colouring plot
+
+m:s ===> Magenta color dotted line with square MarkerS  <br>
+g--* ==> Green color dashed line with star markers <br>
+r- ==> red solid line with no markers
